@@ -1,11 +1,19 @@
-body, html, * {
+html, * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
 }
 
 @font-face {
@@ -72,21 +80,32 @@ body, html, * {
   }
 }
 
-main {
+.background {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 1fr;
       grid-template-columns: 50% 1fr;
-  position: absolute;
+  position: fixed;
   top: 0;
 }
 
-main .black {
+.background .black {
   background-color: black;
+  /*background-attachment: fixed;*/
+  -webkit-transition: all ease-in-out;
+  transition: all ease-in-out;
 }
 
-main .white {
+.background .white {
   background-color: white;
+  /*background-attachment: fixed;*/
+  -webkit-transition: all ease-in-out;
+  transition: all ease-in-out;
+}
+
+main {
+  position: absolute;
+  top: 0;
 }
 
 main .myNav {
@@ -150,6 +169,7 @@ main .sites {
 
 main .sites .site1, main .sites .site2, main .sites .site3 {
   height: 80vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,6 +177,10 @@ main .sites .site1, main .sites .site2, main .sites .site3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  overflow: hidden;
 }
 
 main .sites button {
@@ -167,7 +191,9 @@ main .sites button {
   font-family: Poppins-bold, serif;
   color: white;
   font-size: 23px;
-  margin: auto;
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 main .sites .full {
@@ -175,6 +201,26 @@ main .sites .full {
   border-radius: 10px;
   width: 23vw;
   height: 60vh;
-  margin-top: 5vh;
+  margin-left: 3%;
+  margin-top: 80px;
+  opacity: 0.3;
+}
+
+main .sites .mini {
+  background-color: #5A5959;
+  border-radius: 10px;
+  margin: auto;
+  width: 23vw;
+  height: 30vh;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 10%;
+}
+
+main .page02 {
+  position: absolute;
+  top: 100vh;
 }
 /*# sourceMappingURL=style.css.map */
