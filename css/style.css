@@ -81,10 +81,6 @@ body {
 }
 
 .background {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50% 1fr;
-      grid-template-columns: 50% 1fr;
   position: fixed;
   top: 0;
 }
@@ -94,6 +90,8 @@ body {
   /*background-attachment: fixed;*/
   -webkit-transition: all ease-in-out;
   transition: all ease-in-out;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .background .white {
@@ -101,6 +99,49 @@ body {
   /*background-attachment: fixed;*/
   -webkit-transition: all ease-in-out;
   transition: all ease-in-out;
+}
+
+.background .annim1 {
+  -webkit-animation-name: backAnim;
+          animation-name: backAnim;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+          animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.background .annim2 {
+  -webkit-animation-name: backAnim;
+          animation-name: backAnim;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+          animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  animation-direction: alternate-reverse;
+}
+
+@-webkit-keyframes backAnim {
+  from {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  to {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+}
+
+@keyframes backAnim {
+  from {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  to {
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
 }
 
 main {

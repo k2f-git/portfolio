@@ -12,18 +12,12 @@ const changeBackground = ()=>{
     document.addEventListener('scroll', () => {
         console.log(document.documentElement.scrollTop);
         if(document.body.scrollTop > (window.innerHeight/1.2) || document.documentElement.scrollTop > (window.innerHeight/1.2)){
-            back1.classList.remove('black');
-            back1.classList.add('white');
-            back2.classList.remove('white');
-            back2.classList.add('black');
-        }
-        else if (document.body.scrollTop <= (window.innerHeight/8) || document.documentElement.scrollTop <= (window.innerHeight/8)){
-            back2.classList.remove('black');
-            back2.classList.add('white');
-            back1.classList.remove('white');
-            back1.classList.add('black');
-        }
-    })
+            back1.classList.add('annim1');
+            setTimeout(()=>{
+                back1.style.transform = 'translateX(50%)';
+                document.querySelector('.myNav a').style.color = '#5A5959';
+            })
+    }});
 };
 
 changeBackground();
