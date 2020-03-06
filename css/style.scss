@@ -1,0 +1,191 @@
+ html, *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+@import 'fonts';
+
+#loader{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: darken($color: #000000, $amount: 0);
+    position: fixed;
+    transition: opacity 0.5s ease;
+    top: 0;
+    #logo{
+        width: 672px;
+        height: 175px;
+        margin: auto;
+        background-color: white;
+        animation: blink 1s alternate infinite;
+        transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    }
+
+    z-index: 1;
+    
+}
+
+.load{
+    opacity: 0;
+}
+
+@keyframes blink{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.background{
+    position: fixed;
+    top: 0;
+    .black{
+        background-color: darken($color: #000000, $amount: 0);
+        /*background-attachment: fixed;*/
+        transition: all ease-in-out;
+        transform: translateX(-50%);
+    }
+    .white{
+        background-color: white;
+        /*background-attachment: fixed;*/
+        transition: all ease-in-out;
+    }
+
+    .annim1{
+        animation-name: backAnim;
+        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        animation-direction: alternate;
+    }
+
+    .annim2{
+        animation-name: backAnim;
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+        animation-direction: alternate-reverse;
+    }
+
+
+    @keyframes backAnim{
+        from{
+            transform: translateX(-50%);
+        }
+        to{
+            transform: translateX(50%);
+        }
+    }
+}
+
+main{
+    
+    position: absolute;
+    top: 0;
+    
+    .myNav{
+        position: absolute;
+        top: 0;
+        /*display: flex;
+        flex-direction: row;
+        justify-content: space-around;*/
+        width: 100vw;
+        height: 80px;
+        .logo{
+            max-width: 219px;
+            max-height: 74px;
+            background-color: white;
+        }
+        ul{
+            position: relative;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-content: center;
+            text-align: center;
+            margin: auto;
+        }
+        .text{
+            margin-top: 20px;
+            font-family: Poppins-bold, serif;
+        }
+        a{
+            text-decoration: none;
+        }
+
+    }
+    .sites{
+        width: 90vw;
+        margin-left: 8vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: absolute;
+        top: 80px;
+
+        .site1,.site2,.site3{
+        height: 80vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+        overflow: hidden;
+
+        
+        }
+        button{
+        max-width: 181px;
+        max-height: 54px;
+        border-radius: 25px;
+        background-color: #FF9018;
+        font-family: Poppins-bold, serif;
+        color: white;
+        font-size: 23px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+     }
+     .full{
+         background-color: #5A5959;
+         border-radius: 10px;
+         width: 23vw;
+         height: 60vh;
+         margin-left: 3%;
+         margin-top: 80px;
+         opacity: 0.3;
+     }
+     .mini{
+        background-color: #5A5959;
+        border-radius: 10px;
+        margin: auto;
+        width: 23vw;
+        height: 30vh;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10%;
+     }
+    }
+
+    .page02{
+        position: absolute;
+        top: 100vh;
+    }
+
+
+}

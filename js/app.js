@@ -2,8 +2,8 @@ const loader = document.querySelector('#loader');
 var back = document.querySelectorAll('.back');
 [back1,back2] = back;
 const checkLoad = ()=>{ //function qui desactive le loader une fois que la connexion est etablie
-    document.addEventListener('load',()=>{
-        loader.style.opacity = 0;
+    window.addEventListener('load',()=>{
+        loader.classList.toggle('load');
     });
 }
 checkLoad();
