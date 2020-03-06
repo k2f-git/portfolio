@@ -13,10 +13,10 @@ const changeBackground = ()=>{
         console.log(document.documentElement.scrollTop);
         if(document.body.scrollTop > (window.innerHeight/1.2) || document.documentElement.scrollTop > (window.innerHeight/1.2)){
             back1.classList.add('annim1');
-            setTimeout(()=>{
+            setTimeout( ()=>{
                 back1.style.transform = 'translateX(50%)';
                 document.querySelector('.myNav a').style.color = '#5A5959';
-            })
+            }, 500)
     }});
 };
 
